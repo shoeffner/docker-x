@@ -22,11 +22,13 @@ docker run -e DISPLAY=${IP}:0 -v /tmp/.X11-unix:/tmp/.X11-unix --name X11-enable
   b. Make sure to set the DISPLAY variable correctly: `-e DISPLAY=$(ipconfig getifaddr en0)`
   c. So, for the example `x11-firefox`:
 
-    open -a XQuartz
-    IP=$(ipconfig getifaddr en0)
-    xhost + ${IP}
-    docker build -t x11-firefox x11-firefox
-    docker run -e DISPLAY=${IP}:0 -v /tmp/.X11-unix:/tmp/.X11-unix --name x11-firefox x11-firefox
+```
+open -a XQuartz
+IP=$(ipconfig getifaddr en0)
+xhost + ${IP}
+docker build -t x11-firefox x11-firefox
+docker run -e DISPLAY=${IP}:0 -v /tmp/.X11-unix:/tmp/.X11-unix --name x11-firefox x11-firefox
+```
 
 That's it.
 
