@@ -62,8 +62,20 @@ Solution:
 1. Make sure that the "Allow connections from network clients" checkbox is ticket.
 2. If the problem persists, restart.
 
+## QXcbConnection: Could not connect to display
 
-# TODO:
+Error:
+
+```
+QXcbConnection: Could not connect to display 123.123.123.123:0
+```
+
+Solution:
+
+Run `xhost + $(ipconfig getifaddr en0)` again – or, to simply allow all connections, `xhost +`.
+
+
+# TODO
 
 - Test via remote server
 - Test with daemonized settings
